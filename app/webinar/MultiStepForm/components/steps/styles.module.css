@@ -1,0 +1,115 @@
+.step {
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border-radius: 30px;
+}
+
+.heading {
+    color: #3CA295;
+    font-size: 24px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #3CA295;
+}
+
+.label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: #333;
+}
+
+.input {
+    margin-top: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.input:focus {
+    outline: none;
+    border-color: #34dfc8;
+    box-shadow: 0 0 4px rgba(28, 230, 189, 0.2);
+    background-color: #f9feff;
+    transition: border-color 0.6s ease-in-out;
+    transition: background-color 0.4s ease-in-out;
+}
+
+.paragraph {
+    font-size: 16px;
+    color: #555;
+}
+
+.summarySection {
+    margin-bottom: 15px;
+}
+
+.subHeading {
+    font-size: 18px;
+    color: #0b4d40;
+    margin-bottom: 5px;
+}
+
+.button {
+    background-color: #3ca295;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.button:hover {
+    background-color: #093d34;
+}
+.radioGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.checkboxGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 10px;
+}
+.checkboxWrapper{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.checkbox {
+    margin-left: 5px;
+}
+.radio{
+    padding: 10px;
+    border: 1px solid blue;
+
+}
+.workshop,.total{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+.total{
+    margin-top: 20px;
+   
+}
+.totamt{
+    font-size: 24px;
+    font-weight: 500;
+}
+.paragraph {
+    font-size: 16px;
+    color: #555;
+    margin: 5px 0;
+}

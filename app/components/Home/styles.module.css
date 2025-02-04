@@ -1,0 +1,44 @@
+/* Main Page Container */
+.main {
+    overflow: hidden;
+    position: relative;
+    background-color: #ffffff;
+}
+
+/* Cursor Styling */
+.cursor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 9998;
+    mix-blend-mode: difference;
+    transition: transform 0.1s ease-out;
+}
+
+/* Stroke Effect (For Scroll Animation) */
+.stroke {
+    position: absolute;
+    top: 600px;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Offer Component Visibility */
+.offer {
+    display: block;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+@media (max-width: 839px) {
+    .offer {
+        display: none;
+    }
+}

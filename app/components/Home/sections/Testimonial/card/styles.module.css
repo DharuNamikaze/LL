@@ -1,0 +1,70 @@
+.card {
+    width: 350px;
+    height: 450px;
+    border-radius: 30px;
+    background-color: white;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    scroll-snap-align: start;
+    flex: 0 0 auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0px 30px rgba(0, 0, 0, 0.1);
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+.profile {
+    border-radius: 50%;
+    height: 70px;
+    width: 70px;
+    object-fit: cover;
+    object-position: top;
+}
+.feed{
+    margin-top: 30px;
+    color: black;
+}
+.name {
+    color: black;
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+.role{
+    color: gray;
+    font-size: 16px;
+}
+.rating {
+    display: flex;
+    gap: 5px;
+    margin-top: 15px;
+}
+
+.star {
+    color: gold;
+    /* Star color */
+    font-size: 18px;
+    /* Adjust star size */
+}
+
+@media (max-width: 730px) {
+    .card:hover {
+            transform: none;
+            box-shadow: none;
+    }
+    .card{
+        width: 310px;
+        height: 500px;
+    }
+}

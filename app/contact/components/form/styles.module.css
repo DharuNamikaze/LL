@@ -1,0 +1,72 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+}
+
+.formGroup {
+    display: flex;
+    gap: 20px;
+}
+
+.formField {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.input {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.input::placeholder {
+    color: #999;
+}
+
+.input:focus {
+    border-color: #455ce9;
+    outline: none;
+}
+
+.input:hover {
+    border-color: #555;
+}
+
+.mailSentMessage {
+    color: green;
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .formGroup {
+        flex-direction: column;
+    }
+
+    .form {
+        padding: 15px;
+    }
+}
+
+.successMessage {
+    margin-top: 20px;
+    color: #28a745;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-align: center;
+}

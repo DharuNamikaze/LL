@@ -1,0 +1,58 @@
+.progressContainer {
+    width: 100%;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.progressHeader {
+    display: flex;
+    justify-content: left;
+    align-items: baseline;
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.percentage {
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+.complete {
+    font-size: 14px;
+    color: #316c5a;
+}
+
+.stepTitle {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 12px;
+    text-align: start;
+}
+
+.progressBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.progressSegment {
+    flex: 1;
+    height: 4px;
+    background-color: #00917e;
+    margin: 0 4px;
+    border-radius: 2px;
+    transition: background-color 0.3s ease;
+}
+
+.progressSegment.completed {
+    background-color: #ffffff;
+}
+
+.progressSegment:first-child {
+    margin-left: 0;
+}
+
+.progressSegment:last-child {
+    margin-right: 0;
+}

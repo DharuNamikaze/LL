@@ -1,0 +1,25 @@
+
+.link {
+    display: inline-block;
+    margin-right: 13px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.icon {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background-color: rgb(65, 65, 65);
+    color: #dcdcdc;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.link:hover .icon {
+    background-color: #a600ff;
+    color: white;
+}

@@ -1,0 +1,21 @@
+
+.serviceGallery {
+    padding: 30px 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    background-color: white;
+    height: 100%;
+}
+
+.title {
+    font-size: 60px;
+    line-height: 65px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+/* Ensure the images have a clean look with a border radius */
+.img {
+    border-radius: 10px;
+}

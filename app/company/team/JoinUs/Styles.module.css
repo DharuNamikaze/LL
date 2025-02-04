@@ -1,0 +1,132 @@
+.container {
+    height: auto;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    padding-bottom: 0;
+}
+
+.title {
+    font-size: 44px;
+    text-align: center;
+    margin: 0;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    max-width: 1100px;
+}
+
+.btn {
+    height: 50px;
+    width: 160px;
+    background-color: black;
+    border-radius: 50px;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+}
+
+.desc {
+    margin-top: 10px;
+    width: 100%;
+    font-weight: 400;
+    text-align: center;
+    color: gray;
+    max-width: 900px;
+}
+
+.animatedGradient {
+    font-weight: 600;
+    background: linear-gradient(90deg, #ab2ff8, #fc059f);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: gradientAnimation 3s ease infinite;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.bannerImage {
+    width: 100%;
+    max-width: 1200px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .title {
+        font-size: 36px;
+    }
+
+    .desc {
+        font-size: 18px;
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 32px;
+        text-align: start;
+    }
+
+    .desc {
+        text-align: start;
+        font-size: 16px;
+        padding: 0 15px;
+    }
+
+    .btn {
+        width: 140px;
+        font-size: 18px;
+    }
+
+    .bannerImage {
+        width: 100%;
+        max-width: 900px;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 28px;
+    }
+
+    .desc {
+        font-size: 14px;
+        padding: 0 10px;
+    }
+
+    .btn {
+        width: 130px;
+        font-size: 16px;
+    }
+
+    .bannerImage {
+        width: 100%;
+        max-width: 100%;
+    }
+}

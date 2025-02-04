@@ -1,0 +1,175 @@
+.container {
+    height: auto;
+    width: 100%;
+    padding: 50px 150px;
+    background-color: #efefef;
+    padding-bottom: 100px;
+}
+
+.ReachOutContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #008BFF;
+    width: 150px;
+    height: 40px;
+    border-radius: 20px;
+    font-weight: 400;
+    color: rgb(255, 255, 255);
+}
+
+.title {
+    font-size: 50px;
+    color: rgb(0, 0, 0);
+    margin: 15px 3px;
+    margin-bottom: 0px;
+}
+
+.subtitle {
+    font-size: 20px;
+    color: rgb(108, 108, 108);
+    margin-bottom: 10px;
+    margin-left: 4px;
+    font-weight: 300;
+}
+
+.cardContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 50px;
+    align-items: stretch;
+    margin-top: 40px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 35px;
+    padding-top: 45px;
+    background-color: white;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    height: 100%;
+}
+
+.h3 {
+    font-size: 30px;
+    font-weight: 500;
+    margin-left: 5px;
+    margin-top: 10px;
+    transition: font-size 0.4s ease;
+}
+
+.desc {
+    font-size: 20px;
+    font-weight: 300;
+    margin-left: 5px;
+    margin-bottom: 10px;
+    transition: font-size 0.4s ease;
+}
+
+.link_1,.link_2,.link_3 {
+    margin-left: 5px;
+    margin-bottom: 15px;
+    color: #00FF7C;
+    font-weight: 500;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.link_2{
+    color: #008BFF;
+}
+.link_3{
+    color: #FF001C;
+}
+.arrow {
+    margin-left: 7px;
+    transition: transform 0.4s ease;
+}
+
+/* Hover effects for larger screens only */
+@media (min-width: 769px) {
+    .card:hover {
+        transform: scale(1.05);
+    }
+
+    .card:hover .h3 {
+        margin-top: 15px;
+        font-size: 32px;
+    }
+
+    .card:hover .desc {
+        font-size: 20px;
+    }
+
+    .card:hover .link_1,.card:hover .link_2,.card:hover .link_3 {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media screen and (max-width: 1600px) {
+    .container {
+        padding: 50px 100px;
+    }
+}
+
+@media screen and (max-width: 820px) {
+    .title {
+        font-size: 40px;
+    }
+
+    .subtitle {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 695px) {
+    .ReachOutContainer {
+        width: 100px;
+        height: 30px;
+        font-size: 14px;
+    }
+
+    .title {
+        margin-top: 20px;
+        font-size: 36px;
+        line-height: 40px;
+        margin-bottom: 10px;
+    }
+
+    .card {
+        padding: 25px;
+        padding-top: 35px;
+    }
+
+    .h3 {
+        font-size: 24px;
+    }
+
+    .desc {
+        font-size: 16px;
+    }
+
+    /* Always show the link in mobile view */
+    .link_1, .link_2, .link_3{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .cardContainer {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .container {
+        padding: 50px;
+    }
+}
