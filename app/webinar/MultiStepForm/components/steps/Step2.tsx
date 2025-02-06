@@ -31,8 +31,7 @@ const Step2: React.FC<Step2Props> = ({ data, setData }) => {
             className={styles.input}
             value={data.yearOfStudy}
             onChange={(e) =>
-              setData((prev) => ({ ...prev, yearOfStudy: e.target.value }))
-            }
+              setData({ ...data, yearOfStudy: e.target.value })}
           >
             <option value="">Select your year</option>
             <option value="1">1st Year</option>
@@ -49,8 +48,7 @@ const Step2: React.FC<Step2Props> = ({ data, setData }) => {
             placeholder="Enter your graduation year"
             value={data.graduationYear}
             onChange={(e) =>
-              setData((prev) => ({ ...prev, graduationYear: e.target.value }))
-            }
+              setData({ ...data, graduationYear: e.target.value })}
           />
         </label>
         <label className={styles.label}>
@@ -61,8 +59,7 @@ const Step2: React.FC<Step2Props> = ({ data, setData }) => {
             placeholder="Enter your college name"
             value={data.collegeName}
             onChange={(e) =>
-              setData((prev) => ({ ...prev, collegeName: e.target.value }))
-            }
+              setData({ ...data, collegeName: e.target.value })}
           />
         </label>
         <label className={styles.label}>
@@ -73,8 +70,7 @@ const Step2: React.FC<Step2Props> = ({ data, setData }) => {
             placeholder="Enter your department"
             value={data.department}
             onChange={(e) =>
-              setData((prev) => ({ ...prev, department: e.target.value }))
-            }
+              setData({ ...data, department: e.target.value })}
           />
         </label>
         <label className={styles.label}>
@@ -85,8 +81,7 @@ const Step2: React.FC<Step2Props> = ({ data, setData }) => {
             rows={3}
             value={data.address}
             onChange={(e) =>
-              setData((prev) => ({ ...prev, address: e.target.value }))
-            }
+              setData({ ...data, address: e.target.value })}
           ></textarea>
         </label>
       </form>

@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./styles.module.css";
 
 interface Step5Props {
-  onSubmit: () => void; // Function to handle submission
+  onSubmit: () => void;
 }
 
 const Step5: React.FC<Step5Props> = ({ onSubmit }) => {

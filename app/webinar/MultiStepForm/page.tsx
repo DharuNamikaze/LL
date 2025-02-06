@@ -8,6 +8,7 @@ import Step4 from "./components/steps/Step4";
 import Step5 from "./components/steps/Step5";
 import MobileView from "./mobile";
 import styles from "./styles.module.css"; // Adjust the path based on your project structure
+import axios from 'axios';
 
 const MultiStepForm: React.FC = () => {
   const [currentStep, setCurrentStep] = useState(1);
@@ -72,7 +73,7 @@ const MultiStepForm: React.FC = () => {
           step2Data.yearOfStudy.trim() !== "" &&
           step2Data.graduationYear.trim() !== "" &&
           step2Data.collegeName.trim() !== "" &&
-          step2Data.department.trim() !== "" &&
+          step2Data.department.trim() !== "" && 
           step2Data.address.trim() !== ""
         );
       case 3:
@@ -88,7 +89,55 @@ const MultiStepForm: React.FC = () => {
   };
 
   // Form Submission to Google Sheets
-  const handleSubmit = async () => {
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+
+
+  //   const formData = {
+  //     fullName: step1Data.fullName,
+  //     email: step1Data.email,
+  //     phone: step1Data.phone,
+  //     yearOfStudy: step2Data.yearOfStudy,
+  //     graduationYear: step2Data.graduationYear,
+  //     collegeName: step2Data.collegeName,
+  //     department: step2Data.department,
+  //     address: step2Data.address,
+  //     fullstack: step3Data.fullstack,
+  //     joinWorkshop: step3Data.joinWorkshop,
+  //     priceRange: step3Data.priceRange,
+  //     setupHelp: step4Data.setupHelp,
+  //     topics: step4Data.topics,
+  //   };
+
+  //   const response = await fetch('https://script.google.com/macros/s/AKfycby01FoMcG2_nWVvuq94q23ywgzTbW1HSZh2oPqXygqGO4lfChW_Lz9jneSOyAfv65xz3w/exec', // <-- Make sure this is your latest deployment URL
+  //       {
+  //         method: "POST",
+  //         headers: {
+  //           "Content-Type": "application/json",
+  //           'Access-Control-Allow-Origin':'*'
+  //         },
+  //         body: JSON.stringify(formData),
+  //       }
+  //     );
+
+  //     const result = await response.json();
+  //     console.log("Response:", result);
+
+  //     if (result.message === "Data saved successfully") {
+  //       alert("✅ Data submitted successfully!");
+  //     } else {
+  //       alert("⚠️ Submission failed: " + result.message);
+  //     }
+  //   if(error) {
+  //     console.error("Error submitting form:", error);
+  //     console.error("Error submitting form:", error);
+  //     console.error("Error submitting form:", error);
+  //     alert("⚠️ Network error! Check console for details.");
+  //   }
+  // };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+  
     const formData = {
       fullName: step1Data.fullName,
       email: step1Data.email,
@@ -104,35 +153,56 @@ const MultiStepForm: React.FC = () => {
       setupHelp: step4Data.setupHelp,
       topics: step4Data.topics,
     };
-
+  
+    
     try {
-      const response = await fetch(
-        "https://script.google.com/macros/s/AKfycbxuZ8sFak0a_66knvSdH1KM1-Z62dkygLFWrG88KRrB_ZUvjXhjp9JU84kiICFTAGlJ/exec", // <-- Make sure this is your latest deployment URL
+      const response = await axios.post(
+        'https://script.google.com/macros/s/AKfycbwr8sHF9awM7vw1vSsStrB69LvHtNgILs-MEiqbcmzFOCqJ2T4gJDiN_rQkB4i2lJU2pg/exec',
+        formData,
         {
-          method: "POST",
           headers: {
-            "Content-Type": "application/json",
+            'Content-Type': 'application/json',
           },
-          body: JSON.stringify(formData),
+          withCredentials: false, // Ensures no cookies are sent, preventing auth issues
         }
       );
+    
 
-      const result = await response.json();
-      console.log("Response:", result);
-
+      //   "",
+      //   {
+          
+      //     method: "POST",
+      //     mode: 'cors',
+      //     headers: {
+            
+      //           'Content-Type': 'application/json',
+      //     },
+      //     // headers: {
+      //     //   "Content-Type": "application/json",
+      //     //   // ❌ Remove 'Access-Control-Allow-Origin' from headers (handled by backend)
+      //     // },
+      //     ,
+      //   }
+      // );
+  
+      if (response.status !== 200) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+  
+      const result = response.data;
+      console.table("Response:", result);
+  
       if (result.status === "success") {
         alert("✅ Data submitted successfully!");
       } else {
         alert("⚠️ Submission failed: " + result.message);
       }
     } catch (error) {
-      console.error("Error submitting form:", error);
+      console.table("❌ Error submitting form:", error);
       alert("⚠️ Network error! Check console for details.");
     }
   };
-
-
-
+  
   // Render current step dynamically
   const renderStep = () => {
     switch (currentStep) {

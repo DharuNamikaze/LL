@@ -18,6 +18,7 @@ interface Step1Props {
 
 const Step1: React.FC<Step1Props> = ({ data, setData }) => {
   return (
+    <>
     <div className={styles.step}>
       <h2 className={styles.heading}>Personal Details</h2>
       <form className={styles.form}>
@@ -29,8 +30,7 @@ const Step1: React.FC<Step1Props> = ({ data, setData }) => {
             placeholder="Enter your full name"
             value={data.fullName}
             onChange={(e) =>
-              setData((prev) => ({ ...prev, fullName: e.target.value }))
-            }
+              setData({ ...data, fullName: e.target.value })}
           />
         </label>
         <label className={styles.label}>
@@ -41,8 +41,7 @@ const Step1: React.FC<Step1Props> = ({ data, setData }) => {
             placeholder="Enter your email"
             value={data.email}
             onChange={(e) =>
-              setData((prev) => ({ ...prev, email: e.target.value }))
-            }
+              setData({ ...data, email: e.target.value })}
           />
         </label>
         <label className={styles.label}>
@@ -53,13 +52,13 @@ const Step1: React.FC<Step1Props> = ({ data, setData }) => {
             placeholder="Enter your phone number"
             value={data.phone}
             onChange={(e) =>
-              setData((prev) => ({ ...prev, phone: e.target.value }))
-            }
+              setData({ ...data, phone: e.target.value })}
           />
         </label>
       </form>
     </div>
-  );
-};
-
+    </>
+    );
+}
+  
 export default Step1;

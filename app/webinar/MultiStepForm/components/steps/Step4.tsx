@@ -51,8 +51,7 @@ const Step4: React.FC<Step4Props> = ({ data, setData }) => {
             rows={3}
             value={data.expectations}
             onChange={(e) =>
-              setData((prev) => ({ ...prev, expectations: e.target.value }))
-            }
+              setData({ ...data, expectations: e.target.value })}
           ></textarea>
         </label>
         <StyledLabel>
@@ -64,9 +63,8 @@ const Step4: React.FC<Step4Props> = ({ data, setData }) => {
                 name="setupHelp"
                 value="yes"
                 checked={data.setupHelp === "yes"}
-                onChange={() =>
-                  setData((prev) => ({ ...prev, setupHelp: "yes" }))
-                }
+                onChange={(e) =>
+                  setData({ ...data, setupHelp: e.target.value })}
               />
               <span className="custom-radio"></span>
               <span className="text">Yes</span>
@@ -77,9 +75,8 @@ const Step4: React.FC<Step4Props> = ({ data, setData }) => {
                 name="setupHelp"
                 value="no"
                 checked={data.setupHelp === "no"}
-                onChange={() =>
-                  setData((prev) => ({ ...prev, setupHelp: "no" }))
-                }
+                onChange={(e) =>
+                  setData({ ...data, setupHelp: e.target.value })}
               />
               <span className="custom-radio"></span>
               <span className="text">No</span>

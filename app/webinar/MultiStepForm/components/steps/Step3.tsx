@@ -32,8 +32,7 @@ const Step3: React.FC<Step3Props> = ({ data, setData }) => {
                 value="yes"
                 checked={data.fullstack === "yes"}
                 onChange={() =>
-                  setData((prev) => ({ ...prev, fullstack: "yes" }))
-                }
+                  setData({ ...data, fullstack: "yes" })}
               />
               <span className="custom-radio"></span>
               <span className="text">Yes</span>
@@ -45,8 +44,7 @@ const Step3: React.FC<Step3Props> = ({ data, setData }) => {
                 value="no"
                 checked={data.fullstack === "no"}
                 onChange={() =>
-                  setData((prev) => ({ ...prev, fullstack: "no" }))
-                }
+                  setData({ ...data, fullstack: "no" })}
               />
               <span className="custom-radio"></span>
               <span className="text">No</span>
@@ -63,8 +61,7 @@ const Step3: React.FC<Step3Props> = ({ data, setData }) => {
                 value="yes"
                 checked={data.joinWorkshop === "yes"}
                 onChange={() =>
-                  setData((prev) => ({ ...prev, joinWorkshop: "yes" }))
-                }
+                  setData({ ...data, joinWorkshop: "yes" })}
               />
               <span className="custom-radio"></span>
               <span className="text">Yes</span>
@@ -76,8 +73,7 @@ const Step3: React.FC<Step3Props> = ({ data, setData }) => {
                 value="no"
                 checked={data.joinWorkshop === "no"}
                 onChange={() =>
-                  setData((prev) => ({ ...prev, joinWorkshop: "no" }))
-                }
+                  setData({ ...data, joinWorkshop: "no" })}
               />
               <span className="custom-radio"></span>
               <span className="text">No</span>
@@ -90,8 +86,7 @@ const Step3: React.FC<Step3Props> = ({ data, setData }) => {
             className={styles.input}
             value={data.priceRange}
             onChange={(e) =>
-              setData((prev) => ({ ...prev, priceRange: e.target.value }))
-            }
+              setData({ ...data, priceRange: e.target.value })}
           >
             <option value="">Select price range</option>
             <option value="1999">₹1999</option>
